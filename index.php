@@ -25,22 +25,53 @@
 
     <div class="container">
         <div class="tab">
-            <button class="tablinks" onclick="openTab(event, 'London')">เรียกดูข้อมูล</button>
-            <button class="tablinks" onclick="openTab(event, 'Paris')">เพิ่มข้อมูล</button>
-            <button class="tablinks" onclick="openTab(event, 'Tokyo')">แก้ไขข้อมูล</button>
+            <button class="tablinks" onclick="openTab(event, 'View')">เรียกดูข้อมูล</button>
+            <button class="tablinks" onclick="openTab(event, 'Insert')">เพิ่มข้อมูล</button>
+            <button class="tablinks" onclick="openTab(event, 'Edit')">แก้ไขข้อมูล</button>
         </div>
 
-        <div id="London" class="tabcontent">
+        <div id="View" class="tabcontent">
             <h3>ข้อมูลการใช้ไฟฟ้าของหน่วยงาน</h3>
             <p>เทสๆ</p>
+
+            <table id="customers">
+                <tr>
+                    <th>ชื่อโรงเรียน</th>
+                    <th>จังหวัด</th>
+                    <th>อำเภอ</th>
+                    <th>ตำบล</th>
+                    <th>ชื่อผู้บริหาร</th>
+                    <th>เบอร์โทร</th>
+                    <th>อีเมลล์</th>
+                    <th>วันที่รับเอกสาร</th>
+                    <th>เซลผู้ประสานงาน</th>
+                    <th>ปริมาณการใช้ไฟฟ้า</th>
+                    <th>ค่าไฟ</th>
+                </tr>
+
+                <tr>
+                    <td>โรงเรียนหกฟหกหฟเดกหดเกด้เดก้เพ</td>
+                    <td>ปทุมธานี</td>
+                    <td>ลำลูกา</td>
+                    <td>คูคต</td>
+                    <td>สกาย</td>
+                    <td>0987654321</td>
+                    <td>dsadjh@gmail.com</td>
+                    <td>10/6/2567</td>
+                    <td>คุณพิเย็น</td>
+                    <td>100,000</td>
+                    <td>100,000</td>
+                </tr>
+
+            </table>
         </div>
 
-        <div id="Paris" class="tabcontent">
+        <div id="Insert" class="tabcontent">
             <h3>พื้นที่ Insert data</h3>
             <p>ใส่ลงใน table database or Excel</p>
         </div>
 
-        <div id="Tokyo" class="tabcontent">
+        <div id="Edit" class="tabcontent">
             <h3>Edit data</h3>
             <p>พื้นที่แก้ไขข้อมูลใน table</p>
         </div>
