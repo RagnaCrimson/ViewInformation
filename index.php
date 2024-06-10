@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Front</title>
 </head>
-    </script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    
 <body>
     <div class="header">
         <a href="#default" class="logo">Testing</a>
         <div class="header-right">
-            <a class="active" href="#home">Home</a>
+            <!-- <a class="active" href="#home">Home</a>
             <a href="#contact">Contact</a>
-            <a href="#about">About</a>
+            <a href="#about">About</a> -->
         </div>
     </div>
 
@@ -23,14 +26,14 @@
         <p>Si hope it's will work lol</p>
     </div> -->
 
-    <div class="container">
+    <div class="con">
         <div class="tab">
             <button class="tablinks" onclick="openTab(event, 'View')">เรียกดูข้อมูล</button>
             <button class="tablinks" onclick="openTab(event, 'Insert')">เพิ่มข้อมูล</button>
             <button class="tablinks" onclick="openTab(event, 'Edit')">แก้ไขข้อมูล</button>
         </div>
 
-        <div id="View" class="tabcontent">
+        <div id="View" class="container tabcontent">
             <h3>ข้อมูลการใช้ไฟฟ้าของหน่วยงาน</h3>
             <p>เทสๆ</p>
 
