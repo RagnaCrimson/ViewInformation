@@ -37,8 +37,8 @@ $resultdataview = $objConnect->query($strSQL_dataview);
         </div>
     </div>
 
-    <div class="frame">
-        <h1>ทำความสะอาดทั่วไป</h1>
+    <div id="View" class="container tabcontent">
+        <h1>ข้อมูลการใช้ไฟฟ้าของหน่วยงาน</h1>
         <table class="table table-striped">
         <?php
         if ($resultdataview->num_rows > 0) {
@@ -81,6 +81,10 @@ $resultdataview = $objConnect->query($strSQL_dataview);
                     <td><?php echo $row["V_ElectricPerYear"]; ?></td>
                     <td><?php echo $row["V_ElectricPerMonth"]; ?></td>
                     <td><?php echo $row["V_Status"]; ?></td>
+                    <td>
+                        <a href="edit.php?id=<?php echo $row['V_NumID']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="delete.php?id=<?php echo $row['V_NumID']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
                 </tr>
                 <?php
             }
