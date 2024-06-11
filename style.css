@@ -72,6 +72,10 @@ body {
     text-align: center;
 }
 
+.expand {
+  width: 25%; /* You can adjust this value as needed */
+}
+
 /* end etc */
 
 /* ********************** */

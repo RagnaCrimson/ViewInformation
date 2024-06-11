@@ -37,63 +37,71 @@ $resultdataview = $objConnect->query($strSQL_dataview);
         </div>
     </div>
 
-    <div id="View" class="container tabcontent">
-        <h1>ข้อมูลการใช้ไฟฟ้าของหน่วยงาน</h1>
-        <table class="table table-striped">
-        <?php
-        if ($resultdataview->num_rows > 0) {
-            ?>
-            <tr>
-                <th>ลำดับ</th>
-                <th>ชื่อหน่วยงาน</th>
-                <th>จังหวัด</th>
-                <th>อำเภอ</th>
-                <th>ตำบล</th>
-                <th>ชื่อผู้บริหาร</th>
-                <th>เบอร์โทร</th>
-                <th>E-mail</th>
-                <th>ชื่อผู้ประสานงาน</th>
-                <th>เบอร์โทร</th>
-                <th>E-mail</th>
-                <th>ทีมฝ่ายขาย</th>
-                <th>วันที่รับเอกสาร</th>
-                <th>การใช้ไฟ/ปี</th>
-                <th>การใช้ไฟ/เดือน</th>
-                <th>สถานะ</th>
-            </tr>
+    <div class="con">
+        <div class="tab"> 
+            <button class="tablinks" onclick="openTab(event, 'View')"><a href="view.php">เรียกดูข้อมูล</a></button>
+            <button class="tablinks" onclick="openTab(event, 'Insert')">เพิ่มข้อมูล</button>
+            <button class="tablinks" onclick="openTab(event, 'Edit')">แก้ไขข้อมูล</button>
+        </div>
+
+        <div id="View" class="container tabcontent">
+            <h1>ข้อมูลการใช้ไฟฟ้าของหน่วยงาน</h1>
+            <table id="data">
             <?php
-            while($row = $resultdataview->fetch_assoc()) {
+            if ($resultdataview->num_rows > 0) {
                 ?>
                 <tr>
-                    <td><?php echo $row["V_NumID"]; ?></td>
-                    <td><?php echo $row["V_Schoolname"]; ?></td>
-                    <td><?php echo $row["V_Province"]; ?></td>
-                    <td><?php echo $row["V_District"]; ?></td>
-                    <td><?php echo $row["V_SubDistrict"]; ?></td>
-                    <td><?php echo $row["V_ExecutiveName"]; ?></td>
-                    <td><?php echo $row["V_ExeTell"]; ?></td>
-                    <td><?php echo $row["V_ExeEmail"]; ?></td>
-                    <td><?php echo $row["V_CoordinatorName"]; ?></td>
-                    <td><?php echo $row["V_CooTell"]; ?></td>
-                    <td><?php echo $row["V_CooEmail"]; ?></td>
-                    <td><?php echo $row["V_Sale"]; ?></td>
-                    <td><?php echo $row["V_Date"]; ?></td>
-                    <td><?php echo $row["V_ElectricPerYear"]; ?></td>
-                    <td><?php echo $row["V_ElectricPerMonth"]; ?></td>
-                    <td><?php echo $row["V_Status"]; ?></td>
-                    <td>
-                        <a href="edit.php?id=<?php echo $row['V_NumID']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                        <a href="delete.php?id=<?php echo $row['V_NumID']; ?>" class="btn btn-danger btn-sm">Delete</a>
-                    </td>
+                    <th>ลำดับ</th>
+                    <th>ชื่อหน่วยงาน</th>
+                    <th>จังหวัด</th>
+                    <th>อำเภอ</th>
+                    <th>ตำบล</th>
+                    <th>ชื่อผู้บริหาร</th>
+                    <th>เบอร์โทร</th>
+                    <th>E-mail</th>
+                    <th>ชื่อผู้ประสานงาน</th>
+                    <th>เบอร์โทร</th>
+                    <th>E-mail</th>
+                    <th>ทีมฝ่ายขาย</th>
+                    <th>วันที่รับเอกสาร</th>
+                    <th>การใช้ไฟ/ปี</th>
+                    <th>การใช้ไฟ/เดือน</th>
+                    <th>สถานะ</th>
                 </tr>
                 <?php
+                while($row = $resultdataview->fetch_assoc()) {
+                    ?>
+                    <tr>
+                        <td><?php echo $row["V_NumID"]; ?></td>
+                        <td class="expand"><?php echo $row["V_Schoolname"]; ?></td>
+                        <td><?php echo $row["V_Province"]; ?></td>
+                        <td><?php echo $row["V_District"]; ?></td>
+                        <td><?php echo $row["V_SubDistrict"]; ?></td>
+                        <td class="expand"><?php echo $row["V_ExecutiveName"]; ?></td>
+                        <td><?php echo $row["V_ExeTell"]; ?></td>
+                        <td><?php echo $row["V_ExeEmail"]; ?></td>
+                        <td class="expand"><?php echo $row["V_CoordinatorName"]; ?></td>
+                        <td><?php echo $row["V_CooTell"]; ?></td>
+                        <td><?php echo $row["V_CooEmail"]; ?></td>
+                        <td><?php echo $row["V_Sale"]; ?></td>
+                        <td><?php echo $row["V_Date"]; ?></td>
+                        <td><?php echo $row["V_ElectricPerYear"]; ?></td>
+                        <td><?php echo $row["V_ElectricPerMonth"]; ?></td>
+                        <td><?php echo $row["V_Status"]; ?></td>
+                        <td>
+                            <a href="edit.php?id=<?php echo $row['V_NumID']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="delete.php?id=<?php echo $row['V_NumID']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                    <?php
+                }
+            } else {
+                echo "<tr><td colspan='16'>ไม่มีข้อมูลรายการ</td></tr>";
             }
-        } else {
-            echo "<tr><td colspan='16'>ไม่มีข้อมูลรายการ</td></tr>";
-        }
-        $objConnect->close();
-        ?>
-        </table>
+            $objConnect->close();
+            ?>
+            </table>
+        </div>
     </div>
 </body>
 </html>

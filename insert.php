@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 
-    <div class="frame">
+    <div class="container tabcontent">
         <h1>Insert Data</h1>
         <form action="insert.php" method="POST">
             <div class="form-group">
@@ -86,11 +86,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="form-group">
                 <label for="V_ExeTell">เบอร์โทรผู้บริหาร:</label>
-                <input type="text" class="form-control" id="V_ExeTell" name="V_ExeTell" required>
+                <input type="text" class="form-control" id="V_ExeTell" name="V_ExeTell">
             </div>
             <div class="form-group">
                 <label for="V_ExeEmail">E-mail ผู้บริหาร:</label>
-                <input type="email" class="form-control" id="V_ExeEmail" name="V_ExeEmail" required>
+                <input type="email" class="form-control" id="V_ExeEmail" name="V_ExeEmail">
             </div>
             <div class="form-group">
                 <label for="V_CoordinatorName">ชื่อผู้ประสานงาน:</label>
@@ -98,11 +98,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="form-group">
                 <label for="V_CooTell">เบอร์โทรผู้ประสานงาน:</label>
-                <input type="text" class="form-control" id="V_CooTell" name="V_CooTell" required>
+                <input type="text" class="form-control" id="V_CooTell" name="V_CooTell">
             </div>
             <div class="form-group">
                 <label for="V_CooEmail">E-mail ผู้ประสานงาน:</label>
-                <input type="email" class="form-control" id="V_CooEmail" name="V_CooEmail" required>
+                <input type="email" class="form-control" id="V_CooEmail" name="V_CooEmail">
             </div>
             <div class="form-group">
                 <label for="V_Sale">ทีมฝ่ายขาย:</label>

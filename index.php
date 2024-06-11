@@ -1,4 +1,23 @@
-<!DOCTYPE html>
+<?php
+session_start();
+$server = "localhost";
+$username = "root";
+$password = "";
+$database = "dataview";
+
+$objConnect = new mysqli($server, $username, $password, $database);
+
+if ($objConnect->connect_error) {
+    die("Connection failed: " . $objConnect->connect_error);
+}
+
+mysqli_query($objConnect, "SET NAMES utf8");
+
+$strSQL_dataview = "SELECT * FROM view";
+$resultdataview = $objConnect->query($strSQL_dataview);
+
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,97 +26,93 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <title>Front</title>
+    <title>View Data</title>
 </head>
-    
+
 <body>
     <div class="header">
-        <a href="#default" class="logo">Testing</a>
+        <a href="index.php" class="logo">Testing</a>
         <div class="header-right">
-            <!-- <a class="active" href="#home">Home</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a> -->
+            <!-- Additional links can be added here -->
         </div>
     </div>
 
     <div class="con">
         <div class="tab"> 
             <button class="tablinks" onclick="openTab(event, 'View')"><a href="view.php">เรียกดูข้อมูล</a></button>
-            <button class="tablinks" onclick="openTab(event, 'Insert')">เพิ่มข้อมูล</button>
-            <button class="tablinks" onclick="openTab(event, 'Edit')">แก้ไขข้อมูล</button>
+            <button class="tablinks" onclick="openTab(event, 'Insert')"><a href="insert.php">เพิ่มข้อมูล</a></button>
         </div>
 
         <div id="View" class="container tabcontent">
-            <h3>ข้อมูลการใช้ไฟฟ้าของหน่วยงาน</h3>
-            <p>เทสๆ</p>
-
+            <h1>ข้อมูลการใช้ไฟฟ้าของหน่วยงาน</h1>
             <table id="data">
+            <?php
+            if ($resultdataview->num_rows > 0) {
+                ?>
                 <tr>
-                    <th>ชื่อโรงเรียน</th>
+                    <th>ลำดับ</th>
+                    <th>ชื่อหน่วยงาน</th>
                     <th>จังหวัด</th>
                     <th>อำเภอ</th>
                     <th>ตำบล</th>
                     <th>ชื่อผู้บริหาร</th>
                     <th>เบอร์โทร</th>
-                    <th>อีเมลล์</th>
+                    <th>E-mail</th>
+                    <th>ชื่อผู้ประสานงาน</th>
+                    <th>เบอร์โทร</th>
+                    <th>E-mail</th>
+                    <th>ทีมฝ่ายขาย</th>
                     <th>วันที่รับเอกสาร</th>
-                    <th>เซลผู้ประสานงาน</th>
-                    <th>ปริมาณการใช้ไฟฟ้า</th>
-                    <th>ค่าไฟ</th>
+                    <th>การใช้ไฟ/ปี</th>
+                    <th>การใช้ไฟ/เดือน</th>
+                    <th>สถานะ</th>
                 </tr>
-
-                <tr>
-                    <td>โรงเรียนหกฟหกหฟเดกหดเกด้เดก้เพ</td>
-                    <td>ปทุมธานี</td>
-                    <td>ลำลูกา</td>
-                    <td>คูคต</td>
-                    <td>สกาย</td>
-                    <td>0987654321</td>
-                    <td>dsadjh@gmail.com</td>
-                    <td>10/6/2567</td>
-                    <td>คุณพิเย็น</td>
-                    <td>100,000</td>
-                    <td>100,000</td>
-                </tr>
-
+                <?php
+                while($row = $resultdataview->fetch_assoc()) {
+                    ?>
+                    <tr>
+                        <td><?php echo $row["V_NumID"]; ?></td>
+                        <td class="expand"><?php echo $row["V_Schoolname"]; ?></td>
+                        <td><?php echo $row["V_Province"]; ?></td>
+                        <td><?php echo $row["V_District"]; ?></td>
+                        <td><?php echo $row["V_SubDistrict"]; ?></td>
+                        <td class="expand"><?php echo $row["V_ExecutiveName"]; ?></td>
+                        <td><?php echo $row["V_ExeTell"]; ?></td>
+                        <td><?php echo $row["V_ExeEmail"]; ?></td>
+                        <td class="expand"><?php echo $row["V_CoordinatorName"]; ?></td>
+                        <td><?php echo $row["V_CooTell"]; ?></td>
+                        <td><?php echo $row["V_CooEmail"]; ?></td>
+                        <td><?php echo $row["V_Sale"]; ?></td>
+                        <td><?php echo $row["V_Date"]; ?></td>
+                        <td><?php echo $row["V_ElectricPerYear"]; ?></td>
+                        <td><?php echo $row["V_ElectricPerMonth"]; ?></td>
+                        <td><?php echo $row["V_Status"]; ?></td>
+                        <td>
+                            <a href="edit.php?id=<?php echo $row['V_NumID']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="delete.php?id=<?php echo $row['V_NumID']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                    <?php
+                }
+            } else {
+                echo "<tr><td colspan='16'>ไม่มีข้อมูลรายการ</td></tr>";
+            }
+            $objConnect->close();
+            ?>
             </table>
         </div>
+    </div>
 
         <div id="Insert" class="tabcontent">
             <h3>พื้นที่ Insert data</h3>
             <p>ใส่ลงใน table database or Excel</p>
         </div>
 
-        <div id="Edit" class="tabcontent">
-            <h3>Edit data</h3>
-            <p>พื้นที่แก้ไขข้อมูลใน table</p>
-        </div>
-    </div>
 
 
-    <script>
-        function openTab(evt, cityName) {
-        var i, tabcontent, tablinks;
 
-        // Hide all tabcontent elements
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-
-        // Remove the "active" class from all tablinks/buttons
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-
-        // Show the current tab, and add an "active" class to the button that opened the tab
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
-        }
-
-        // Set default tab open
-        document.getElementsByClassName("tablinks")[0].click();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
+
+<!-- create by Phoenix | Chanatip Chaipakdee -->
