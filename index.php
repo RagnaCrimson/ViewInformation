@@ -20,15 +20,9 @@
         </div>
     </div>
 
-    <!-- <div class="center" style="padding-left:20px">
-        <h1>Website page for pull out data</h1>
-        <p>with responsive design</p>
-        <p>Si hope it's will work lol</p>
-    </div> -->
-
     <div class="con">
-        <div class="tab">
-            <button class="tablinks" onclick="openTab(event, 'View')">เรียกดูข้อมูล</button>
+        <div class="tab"> 
+            <button class="tablinks" onclick="openTab(event, 'View')"><a href="view.php">เรียกดูข้อมูล</a></button>
             <button class="tablinks" onclick="openTab(event, 'Insert')">เพิ่มข้อมูล</button>
             <button class="tablinks" onclick="openTab(event, 'Edit')">แก้ไขข้อมูล</button>
         </div>
@@ -37,7 +31,7 @@
             <h3>ข้อมูลการใช้ไฟฟ้าของหน่วยงาน</h3>
             <p>เทสๆ</p>
 
-            <table id="customers">
+            <table id="data">
                 <tr>
                     <th>ชื่อโรงเรียน</th>
                     <th>จังหวัด</th>
