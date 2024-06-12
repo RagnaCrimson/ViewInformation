@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="form-group">
                 <label for="V_CoordinatorName">ชื่อผู้ประสานงาน:</label>
-                <input type="text" class="form-control" id="V_CoordinatorName" name="V_CoordinatorName" required>
+                <input type="text" class="form-control" id="V_CoordinatorName" name="V_CoordinatorName">
             </div>
             <div class="form-group">
                 <label for="V_CooTell">เบอร์โทรผู้ประสานงาน:</label>
