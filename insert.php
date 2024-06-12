@@ -70,19 +70,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="form-group">
                 <label for="V_Province">จังหวัด:</label>
-                <input type="text" class="form-control" id="V_Province" name="V_Province" required>
+                <input type="text" class="form-control" id="V_Province" name="V_Province">
             </div>
             <div class="form-group">
                 <label for="V_District">อำเภอ:</label>
-                <input type="text" class="form-control" id="V_District" name="V_District" required>
+                <input type="text" class="form-control" id="V_District" name="V_District">
             </div>
             <div class="form-group">
                 <label for="V_SubDistrict">ตำบล:</label>
-                <input type="text" class="form-control" id="V_SubDistrict" name="V_SubDistrict" required>
+                <input type="text" class="form-control" id="V_SubDistrict" name="V_SubDistrict">
             </div>
             <div class="form-group">
                 <label for="V_ExecutiveName">ชื่อผู้บริหาร:</label>
-                <input type="text" class="form-control" id="V_ExecutiveName" name="V_ExecutiveName" required>
+                <input type="text" class="form-control" id="V_ExecutiveName" name="V_ExecutiveName">
             </div>
             <div class="form-group">
                 <label for="V_ExeTell">เบอร์โทรผู้บริหาร:</label>
@@ -106,23 +106,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="form-group">
                 <label for="V_Sale">ทีมฝ่ายขาย:</label>
-                <input type="text" class="form-control" id="V_Sale" name="V_Sale" required>
+                <input type="text" class="form-control" id="V_Sale" name="V_Sale">
             </div>
             <div class="form-group">
                 <label for="V_Date">วันที่รับเอกสาร:</label>
-                <input type="date" class="form-control" id="V_Date" name="V_Date" required>
+                <input type="date" class="form-control" id="V_Date" name="V_Date">
             </div>
             <div class="form-group">
                 <label for="V_ElectricPerYear">การใช้ไฟ/ปี:</label>
-                <input type="number" class="form-control" id="V_ElectricPerYear" name="V_ElectricPerYear" required>
+                <input type="number" class="form-control" id="V_ElectricPerYear" name="V_ElectricPerYear">
             </div>
             <div class="form-group">
                 <label for="V_ElectricPerMonth">การใช้ไฟ/เดือน:</label>
-                <input type="number" class="form-control" id="V_ElectricPerMonth" name="V_ElectricPerMonth" required>
+                <input type="number" class="form-control" id="V_ElectricPerMonth" name="V_ElectricPerMonth">
             </div>
             <div class="form-group">
                 <label for="V_Status">สถานะ:</label>
-                <input type="text" class="form-control" id="V_Status" name="V_Status" required>
+                <input type="text" class="form-control" id="V_Status" name="V_Status">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
