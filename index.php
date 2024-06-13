@@ -87,8 +87,8 @@ $resultdataview = $objConnect->query($strSQL_dataview);
                             <td><?php echo $row["V_ElectricPerMonth"]; ?></td>
                             <td><?php echo $row["V_Status"]; ?></td>
                             <td>
-                                <a href="edit.php?id=<?php echo $row['V_NumID']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                                <a href="delete.php?id=<?php echo $row['V_NumID']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                                <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
                         <?php
