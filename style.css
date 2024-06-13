@@ -73,7 +73,7 @@ body {
 }
 
 .expand {
-  width: 25%; /* You can adjust this value as needed */
+  width: 25%;
 }
 
 /* end etc */
@@ -84,14 +84,14 @@ body {
 
 .con {
     display: flex;
-    height: 100vh; /* Full height of the viewport */
+    height: 100vh;/
   }
 
   .tab {
-    flex: 1 0 0%; /* Flex-grow, flex-shrink, and base width */
+    flex: 1 0 0%;
     border: 1px solid #b6d5e1;
     background-color: #b6d5e1;
-    overflow-y: auto; /* Enable scrolling if content overflows */
+    overflow-y: auto;
   }
 
   .tab button {
@@ -117,10 +117,10 @@ body {
   }
 
   .tabcontent {
-    flex: 1 0 70%; /* Flex-grow, flex-shrink, and base width */
+    flex: 1 0 70%;
     padding: 0px 12px;
     border-left: none;
-    overflow-y: auto; /* Enable scrolling if content overflows */
+    overflow-y: auto;
   }
 
   /* End tab */
@@ -153,3 +153,5 @@ body {
   }
 
   /* end table */
+
+  /* ************************* */

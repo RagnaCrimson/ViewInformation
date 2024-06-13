@@ -124,6 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="V_Status">สถานะ:</label>
                 <input type="text" class="form-control" id="V_Status" name="V_Status">
             </div>
+
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
