@@ -72,78 +72,85 @@ $objConnect->close();
 
 <body>
     <div class="header">
-        <a href="index.php" class="logo">Testing</a>
+        <a href="index.php" class="logo">Dashbord</a>
         <div class="header-right">
             <!-- Additional links can be added here -->
         </div>
     </div>
+    
+    <div class="con">
+        <div class="tab"> 
+            <button class="tablinks" onclick="openTab(event, 'View')"><a href="index.php">เรียกดูข้อมูล</a></button>
+            <button class="tablinks" onclick="openTab(event, 'Insert')"><a href="insert.php">เพิ่มข้อมูล</a></button>
+        </div>
 
-    <div class="frame">
-        <h1>Edit Data</h1>
-        <form action="edit.php" method="POST">
-            <input type="hidden" name="id" value="<?php echo $row['V_Schoolname']; ?>">
-            <div class="form-group">
-                <label for="V_Schoolname">ชื่อหน่วยงาน:</label>
-                <input type="text" class="form-control" id="V_Schoolname" name="V_Schoolname" value="<?php echo isset($row['V_Schoolname']) ? $row['V_Schoolname'] : ''; ?>" required>
-            </div>
-            <div class="form-group">
-                <label for="V_Province">จังหวัด:</label>
-                <input type="text" class="form-control" id="V_Province" name="V_Province" value="<?php echo isset($row['V_Province']) ? $row['V_Province'] : ''; ?>">
-            </div>
-            <div class="form-group">
-                <label for="V_District">อำเภอ:</label>
-                <input type="text" class="form-control" id="V_District" name="V_District" value="<?php echo isset($row['V_District']) ? $row['V_District'] : ''; ?>">
-            </div>
-            <div class="form-group">
-                <label for="V_SubDistrict">ตำบล:</label>
-                <input type="text" class="form-control" id="V_SubDistrict" name="V_SubDistrict" value="<?php echo isset($row['V_SubDistrict']) ? $row['V_SubDistrict'] : ''; ?>">
-            </div>
-            <div class="form-group">
-                <label for="V_ExecutiveName">ชื่อผู้บริหาร:</label>
-                <input type="text" class="form-control" id="V_ExecutiveName" name="V_ExecutiveName" value="<?php isset($row['V_ExecutiveName']) ? $row['V_ExecutiveName'] : ''; ?>">
-            </div>
-            <div class="form-group">
-                <label for="V_ExeTell">เบอร์โทรผู้บริหาร:</label>
-                <input type="text" class="form-control" id="V_ExeTell" name="V_ExeTell" value="<?php echo isset($row['V_ExeTell']) ? $row['V_ExeTell'] : ''; ?>">
-            </div>
-            <div class="form-group">
-                <label for="V_ExeEmail">E-mail ผู้บริหาร:</label>
-                <input type="text" class="form-control" id="V_ExeEmail" name="V_ExeEmail" value="<?php echo isset($row['V_ExeEmail']) ? $row['V_ExeEmail'] : ''; ?>">
-            </div>
-            <div class="form-group">
-                <label for="V_CoordinatorName">ชื่อผู้ประสานงาน:</label>
-                <input type="text" class="form-control" id="V_CoordinatorName" name="V_CoordinatorName" value="<?php echo isset($row['V_CoordinatorName']) ? $row['V_CoordinatorName'] : ''; ?>">
-            </div>
-            <div class="form-group">
-                <label for="V_CooTell">เบอร์โทรผู้ประสานงาน:</label>
-                <input type="text" class="form-control" id="V_CooTell" name="V_CooTell" value="<?php echo isset($row['V_CooTell']) ? $row['V_CooTell'] : ''; ?>">
-            </div>
-            <div class="form-group">
-                <label for="V_CooEmail">E-mail ผู้ประสานงาน:</label>
-                <input type="text" class="form-control" id="V_CooEmail" name="V_CooEmail" value="<?php echo isset($row['V_CooEmail']) ? $row['V_CooEmail'] : ''; ?>">
-            </div>
-            <div class="form-group">
-                <label for="V_Sale">ทีมฝ่ายขาย:</label>
-                <input type="text" class="form-control" id="V_Sale" name="V_Sale" value="<?php echo isset($row['V_Sale']) ? $row['V_Sale'] : ''; ?>">
-            </div>
-            <div class="form-group">
-                <label for="V_Date">วันที่รับเอกสาร:</label>
-                <input type="date" class="form-control" id="V_Date" name="V_Date" value="<?php echo isset($row['V_Date']) ? $row['V_Date'] : ''; ?>">
-            </div>
-            <div class="form-group">
-                <label for="V_ElectricPerYear">การใช้ไฟ/ปี:</label>
-                <input type="number" class="form-control" id="V_ElectricPerYear" name="V_ElectricPerYear" value="<?php echo isset($row['V_ElectricPerYear']) ? $row['V_ElectricPerYear'] : ''; ?>">
-            </div>
-            <div class="form-group">
-                <label for="V_ElectricPerMonth">การใช้ไฟ/เดือน:</label>
-                <input type="number" class="form-control" id="V_ElectricPerMonth" name="V_ElectricPerMonth" value="<?php echo isset($row['V_ElectricPerMonth']) ? $row['V_ElectricPerMonth'] : ''; ?>">
-            </div>
-            <div class="form-group">
-                <label for="V_Status">สถานะ:</label>
-                <input type="text" class="form-control" id="V_Status" name="V_Status" value="<?php echo isset($row['V_Status']) ? $row['V_Status'] : ''; ?>">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        <div class="container tabcontent">
+            <h1>Edit Data</h1>
+            <form action="edit.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $row['V_Schoolname']; ?>">
+                <div class="form-group">
+                    <label for="V_Schoolname">ชื่อหน่วยงาน:</label>
+                    <input type="text" class="form-control" id="V_Schoolname" name="V_Schoolname" value="<?php echo isset($row['V_Schoolname']) ? $row['V_Schoolname'] : ''; ?>" required>
+                </div>
+                <div class="form-group">
+                    <label for="V_Province">จังหวัด:</label>
+                    <input type="text" class="form-control" id="V_Province" name="V_Province" value="<?php echo isset($row['V_Province']) ? $row['V_Province'] : ''; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="V_District">อำเภอ:</label>
+                    <input type="text" class="form-control" id="V_District" name="V_District" value="<?php echo isset($row['V_District']) ? $row['V_District'] : ''; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="V_SubDistrict">ตำบล:</label>
+                    <input type="text" class="form-control" id="V_SubDistrict" name="V_SubDistrict" value="<?php echo isset($row['V_SubDistrict']) ? $row['V_SubDistrict'] : ''; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="V_ExecutiveName">ชื่อผู้บริหาร:</label>
+                    <input type="text" class="form-control" id="V_ExecutiveName" name="V_ExecutiveName" value="<?php isset($row['V_ExecutiveName']) ? $row['V_ExecutiveName'] : ''; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="V_ExeTell">เบอร์โทรผู้บริหาร:</label>
+                    <input type="text" class="form-control" id="V_ExeTell" name="V_ExeTell" value="<?php echo isset($row['V_ExeTell']) ? $row['V_ExeTell'] : ''; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="V_ExeEmail">E-mail ผู้บริหาร:</label>
+                    <input type="text" class="form-control" id="V_ExeEmail" name="V_ExeEmail" value="<?php echo isset($row['V_ExeEmail']) ? $row['V_ExeEmail'] : ''; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="V_CoordinatorName">ชื่อผู้ประสานงาน:</label>
+                    <input type="text" class="form-control" id="V_CoordinatorName" name="V_CoordinatorName" value="<?php echo isset($row['V_CoordinatorName']) ? $row['V_CoordinatorName'] : ''; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="V_CooTell">เบอร์โทรผู้ประสานงาน:</label>
+                    <input type="text" class="form-control" id="V_CooTell" name="V_CooTell" value="<?php echo isset($row['V_CooTell']) ? $row['V_CooTell'] : ''; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="V_CooEmail">E-mail ผู้ประสานงาน:</label>
+                    <input type="text" class="form-control" id="V_CooEmail" name="V_CooEmail" value="<?php echo isset($row['V_CooEmail']) ? $row['V_CooEmail'] : ''; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="V_Sale">ทีมฝ่ายขาย:</label>
+                    <input type="text" class="form-control" id="V_Sale" name="V_Sale" value="<?php echo isset($row['V_Sale']) ? $row['V_Sale'] : ''; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="V_Date">วันที่รับเอกสาร:</label>
+                    <input type="date" class="form-control" id="V_Date" name="V_Date" value="<?php echo isset($row['V_Date']) ? $row['V_Date'] : ''; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="V_ElectricPerYear">การใช้ไฟ/ปี:</label>
+                    <input type="number" class="form-control" id="V_ElectricPerYear" name="V_ElectricPerYear" value="<?php echo isset($row['V_ElectricPerYear']) ? $row['V_ElectricPerYear'] : ''; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="V_ElectricPerMonth">การใช้ไฟ/เดือน:</label>
+                    <input type="number" class="form-control" id="V_ElectricPerMonth" name="V_ElectricPerMonth" value="<?php echo isset($row['V_ElectricPerMonth']) ? $row['V_ElectricPerMonth'] : ''; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="V_Status">สถานะ:</label>
+                    <input type="text" class="form-control" id="V_Status" name="V_Status" value="<?php echo isset($row['V_Status']) ? $row['V_Status'] : ''; ?>">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

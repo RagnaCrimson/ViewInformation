@@ -80,9 +80,9 @@ body {
 
 /* ********************** */
 
-/* Tab */
+/* Tab left side */
 
-.con {
+  .con {
     display: flex;
     height: 100vh;/
   }

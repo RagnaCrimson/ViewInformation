@@ -55,78 +55,86 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <div class="header">
-        <a href="index.php" class="logo">Testing</a>
+        <a href="index.php" class="logo">Dashbord</a>
         <div class="header-right">
             <!-- Additional links can be added here -->
         </div>
     </div>
 
-    <div class="container tabcontent">
-        <h1>Insert Data</h1>
-        <form action="insert.php" method="POST">
-            <div class="form-group">
-                <label for="V_Schoolname">ชื่อหน่วยงาน:</label>
-                <input type="text" class="form-control" id="V_Schoolname" name="V_Schoolname" required>
-            </div>
-            <div class="form-group">
-                <label for="V_Province">จังหวัด:</label>
-                <input type="text" class="form-control" id="V_Province" name="V_Province">
-            </div>
-            <div class="form-group">
-                <label for="V_District">อำเภอ:</label>
-                <input type="text" class="form-control" id="V_District" name="V_District">
-            </div>
-            <div class="form-group">
-                <label for="V_SubDistrict">ตำบล:</label>
-                <input type="text" class="form-control" id="V_SubDistrict" name="V_SubDistrict">
-            </div>
-            <div class="form-group">
-                <label for="V_ExecutiveName">ชื่อผู้บริหาร:</label>
-                <input type="text" class="form-control" id="V_ExecutiveName" name="V_ExecutiveName">
-            </div>
-            <div class="form-group">
-                <label for="V_ExeTell">เบอร์โทรผู้บริหาร:</label>
-                <input type="text" class="form-control" id="V_ExeTell" name="V_ExeTell">
-            </div>
-            <div class="form-group">
-                <label for="V_ExeEmail">E-mail ผู้บริหาร:</label>
-                <input type="text" class="form-control" id="V_ExeEmail" name="V_ExeEmail">
-            </div>
-            <div class="form-group">
-                <label for="V_CoordinatorName">ชื่อผู้ประสานงาน:</label>
-                <input type="text" class="form-control" id="V_CoordinatorName" name="V_CoordinatorName">
-            </div>
-            <div class="form-group">
-                <label for="V_CooTell">เบอร์โทรผู้ประสานงาน:</label>
-                <input type="text" class="form-control" id="V_CooTell" name="V_CooTell">
-            </div>
-            <div class="form-group">
-                <label for="V_CooEmail">E-mail ผู้ประสานงาน:</label>
-                <input type="text" class="form-control" id="V_CooEmail" name="V_CooEmail">
-            </div>
-            <div class="form-group">
-                <label for="V_Sale">ทีมฝ่ายขาย:</label>
-                <input type="text" class="form-control" id="V_Sale" name="V_Sale">
-            </div>
-            <div class="form-group">
-                <label for="V_Date">วันที่รับเอกสาร:</label>
-                <input type="date" class="form-control" id="V_Date" name="V_Date">
-            </div>
-            <div class="form-group">
-                <label for="V_ElectricPerYear">การใช้ไฟ/ปี:</label>
-                <input type="number" class="form-control" id="V_ElectricPerYear" name="V_ElectricPerYear">
-            </div>
-            <div class="form-group">
-                <label for="V_ElectricPerMonth">การใช้ไฟ/เดือน:</label>
-                <input type="number" class="form-control" id="V_ElectricPerMonth" name="V_ElectricPerMonth">
-            </div>
-            <div class="form-group">
-                <label for="V_Status">สถานะ:</label>
-                <input type="text" class="form-control" id="V_Status" name="V_Status">
-            </div>
+    <div class="con">
+        <div class="tab"> 
+            <button class="tablinks" onclick="openTab(event, 'View')"><a href="index.php">เรียกดูข้อมูล</a></button>
+            <button class="tablinks" onclick="openTab(event, 'Insert')"><a href="insert.php">เพิ่มข้อมูล</a></button>
+        </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        <div class="container tabcontent">
+            <h1>Insert Data</h1>
+            <form action="insert.php" method="POST">
+                <div class="form-group">
+                    <label for="V_Schoolname">ชื่อหน่วยงาน:</label>
+                    <input type="text" class="form-control" id="V_Schoolname" name="V_Schoolname" required>
+                </div>
+                <div class="form-group">
+                    <label for="V_Province">จังหวัด:</label>
+                    <input type="text" class="form-control" id="V_Province" name="V_Province">
+                </div>
+                <div class="form-group">
+                    <label for="V_District">อำเภอ:</label>
+                    <input type="text" class="form-control" id="V_District" name="V_District">
+                </div>
+                <div class="form-group">
+                    <label for="V_SubDistrict">ตำบล:</label>
+                    <input type="text" class="form-control" id="V_SubDistrict" name="V_SubDistrict">
+                </div>
+                <div class="form-group">
+                    <label for="V_ExecutiveName">ชื่อผู้บริหาร:</label>
+                    <input type="text" class="form-control" id="V_ExecutiveName" name="V_ExecutiveName">
+                </div>
+                <div class="form-group">
+                    <label for="V_ExeTell">เบอร์โทรผู้บริหาร:</label>
+                    <input type="text" class="form-control" id="V_ExeTell" name="V_ExeTell">
+                </div>
+                <div class="form-group">
+                    <label for="V_ExeEmail">E-mail ผู้บริหาร:</label>
+                    <input type="text" class="form-control" id="V_ExeEmail" name="V_ExeEmail">
+                </div>
+                <div class="form-group">
+                    <label for="V_CoordinatorName">ชื่อผู้ประสานงาน:</label>
+                    <input type="text" class="form-control" id="V_CoordinatorName" name="V_CoordinatorName">
+                </div>
+                <div class="form-group">
+                    <label for="V_CooTell">เบอร์โทรผู้ประสานงาน:</label>
+                    <input type="text" class="form-control" id="V_CooTell" name="V_CooTell">
+                </div>
+                <div class="form-group">
+                    <label for="V_CooEmail">E-mail ผู้ประสานงาน:</label>
+                    <input type="text" class="form-control" id="V_CooEmail" name="V_CooEmail">
+                </div>
+                <div class="form-group">
+                    <label for="V_Sale">ทีมฝ่ายขาย:</label>
+                    <input type="text" class="form-control" id="V_Sale" name="V_Sale">
+                </div>
+                <div class="form-group">
+                    <label for="V_Date">วันที่รับเอกสาร:</label>
+                    <input type="date" class="form-control" id="V_Date" name="V_Date">
+                </div>
+                <div class="form-group">
+                    <label for="V_ElectricPerYear">การใช้ไฟ/ปี:</label>
+                    <input type="text" class="form-control" id="V_ElectricPerYear" name="V_ElectricPerYear">
+                </div>
+                <div class="form-group">
+                    <label for="V_ElectricPerMonth">การใช้ไฟ/เดือน:</label>
+                    <input type="text" class="form-control" id="V_ElectricPerMonth" name="V_ElectricPerMonth">
+                </div>
+                <div class="form-group">
+                    <label for="V_Status">สถานะ:</label>
+                    <input type="text" class="form-control" id="V_Status" name="V_Status">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+        </div>
     </div>
 </body>
 </html>

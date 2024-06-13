@@ -30,7 +30,7 @@ $resultinfo_db = $objConnect->query($strSQL_info_db);
 
 <body>
     <div class="header">
-        <a href="index.php" class="logo">Testing</a>
+        <a href="index.php" class="logo">Dashbord</a>
         <div class="header-right">
             <!-- Additional links can be added here -->
         </div>
@@ -38,7 +38,7 @@ $resultinfo_db = $objConnect->query($strSQL_info_db);
 
     <div class="con">
         <div class="tab"> 
-            <button class="tablinks" onclick="openTab(event, 'View')"><a href="view.php">เรียกดูข้อมูล</a></button>
+            <button class="tablinks" onclick="openTab(event, 'View')"><a href="index.php">เรียกดูข้อมูล</a></button>
             <button class="tablinks" onclick="openTab(event, 'Insert')"><a href="insert.php">เพิ่มข้อมูล</a></button>
         </div>
 
@@ -100,11 +100,6 @@ $resultinfo_db = $objConnect->query($strSQL_info_db);
                 ?>
             </table>
         </div>
-    </div>
-
-    <div id="Insert" class="tabcontent">
-        <h3>พื้นที่ Insert data</h3>
-        <p>ใส่ลงใน table database or Excel</p>
     </div>
 
     <script src="script.js"></script>
