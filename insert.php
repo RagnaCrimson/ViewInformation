@@ -3,7 +3,7 @@ session_start();
 $server = "localhost";
 $username = "root";
 $password = "";
-$database = "dataview";
+$database = "info_db";
 
 $objConnect = new mysqli($server, $username, $password, $database);
 
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $V_ElectricPerMonth = $_POST['V_ElectricPerMonth'];
     $V_Status = $_POST['V_Status'];
 
-    $sql = "INSERT INTO view (V_Schoolname, V_Province, V_District, V_SubDistrict, V_ExecutiveName, V_ExeTell, V_ExeEmail, V_CoordinatorName, V_CooTell, V_CooEmail, V_Sale, V_Date, V_ElectricPerYear, V_ElectricPerMonth, V_Status)
+    $sql = "INSERT INTO view_info (V_Schoolname, V_Province, V_District, V_SubDistrict, V_ExecutiveName, V_ExeTell, V_ExeEmail, V_CoordinatorName, V_CooTell, V_CooEmail, V_Sale, V_Date, V_ElectricPerYear, V_ElectricPerMonth, V_Status)
     VALUES ('$V_Schoolname', '$V_Province', '$V_District', '$V_SubDistrict', '$V_ExecutiveName', '$V_ExeTell', '$V_ExeEmail', '$V_CoordinatorName', '$V_CooTell', '$V_CooEmail', '$V_Sale', '$V_Date', '$V_ElectricPerYear', '$V_ElectricPerMonth', '$V_Status')";
 
     if ($objConnect->query($sql) === TRUE) {
@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="form-group">
                 <label for="V_ExeEmail">E-mail ผู้บริหาร:</label>
-                <input type="email" class="form-control" id="V_ExeEmail" name="V_ExeEmail">
+                <input type="text" class="form-control" id="V_ExeEmail" name="V_ExeEmail">
             </div>
             <div class="form-group">
                 <label for="V_CoordinatorName">ชื่อผู้ประสานงาน:</label>
@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="form-group">
                 <label for="V_CooEmail">E-mail ผู้ประสานงาน:</label>
-                <input type="email" class="form-control" id="V_CooEmail" name="V_CooEmail">
+                <input type="text" class="form-control" id="V_CooEmail" name="V_CooEmail">
             </div>
             <div class="form-group">
                 <label for="V_Sale">ทีมฝ่ายขาย:</label>

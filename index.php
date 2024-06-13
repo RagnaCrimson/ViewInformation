@@ -3,7 +3,7 @@ session_start();
 $server = "localhost";
 $username = "root";
 $password = "";
-$database = "dataview";
+$database = "info_db";
 
 $objConnect = new mysqli($server, $username, $password, $database);
 
@@ -13,8 +13,8 @@ if ($objConnect->connect_error) {
 
 mysqli_query($objConnect, "SET NAMES utf8");
 
-$strSQL_dataview = "SELECT * FROM view";
-$resultdataview = $objConnect->query($strSQL_dataview);
+$strSQL_info_db = "SELECT * FROM view_info";
+$resultinfo_db = $objConnect->query($strSQL_info_db);
 ?>
 
 <html lang="en">
@@ -65,9 +65,9 @@ $resultdataview = $objConnect->query($strSQL_dataview);
                     <th>Actions</th>
                 </tr>
                 <?php
-                if ($resultdataview->num_rows > 0) {
+                if ($resultinfo_db->num_rows > 0) {
                     $sequence = 1; // Initialize sequence number
-                    while($row = $resultdataview->fetch_assoc()) {
+                    while($row = $resultinfo_db->fetch_assoc()) {
                         ?>
                         <tr>
                             <td><?php echo $sequence++; ?></td>
@@ -87,8 +87,8 @@ $resultdataview = $objConnect->query($strSQL_dataview);
                             <td><?php echo $row["V_ElectricPerMonth"]; ?></td>
                             <td><?php echo $row["V_Status"]; ?></td>
                             <td>
-                                <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                                <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                                <a href="edit.php?id=<?php echo $row['V_Schoolname']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="delete.php?id=<?php echo $row['V_Schoolname']; ?>" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
                         <?php
