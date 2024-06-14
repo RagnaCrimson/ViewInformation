@@ -32,17 +32,12 @@ $resultinfo_db = $objConnect->query($strSQL_info_db);
     <div class="header">
         <a href="index.php" class="logo">Dashbord</a>
         <div class="header-right">
-            <!-- Additional links can be added here -->
+            <a href="index.php">เรียกดูข้อมูล</a>
+            <a href="insert.php">เพิ่มข้อมูล</a>
         </div>
     </div>
 
-    <div class="con">
-        <div class="tab"> 
-            <button class="tablinks" onclick="openTab(event, 'View')"><a href="index.php">เรียกดูข้อมูล</a></button>
-            <button class="tablinks" onclick="openTab(event, 'Insert')"><a href="insert.php">เพิ่มข้อมูล</a></button>
-        </div>
-
-        <div id="View" class="container tabcontent">
+        <div id="View" class="tabcontent">
             <h1>ข้อมูลการใช้ไฟฟ้าของหน่วยงาน</h1>
             <table id="data" class="table table-striped">
                 <tr>
@@ -100,7 +95,7 @@ $resultinfo_db = $objConnect->query($strSQL_info_db);
                 ?>
             </table>
         </div>
-    </div>
+
 
     <script src="script.js"></script>
 </body>
